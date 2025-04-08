@@ -1,16 +1,31 @@
-# shared_preferences_login
+# Flutter Login UI with Shared Preferences
 
-A new Flutter project.
+A simple Flutter application demonstrating a login flow using `SharedPreferences` for persistent login state.
 
-## Getting Started
+## 🚀 Features
+- ✅ Splash screen to check login status
+- 🎨 Login UI (basic design)
+- 💾 Local session management using SharedPreferences
+- 🔁 Seamless navigation between login and home screens based on session
+- 🔓 Logout button to clear session and redirect
 
-This project is a starting point for a Flutter application.
+## 📸 Screenshots
+### **Splash Screen**
+The splash screen checks `SharedPreferences` for a login session. If the user is logged in (`isLoggedIn: true`), it navigates to the Home screen. If not, it goes to the Login page.
 
-A few resources to get you started if this is your first Flutter project:
+<img src="assets/splashScreen.png" width="200" height="auto" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### **Login Page**
+Users can input credentials here. Upon successful login, the `isLoggedIn` flag is set to `true` in `SharedPreferences`, allowing the app to remember the login state.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="assets/loginPage.png" width="200" height="auto" />
+
+### **Home Page**
+Once logged in, users are redirected to the Home page. The session is verified using `SharedPreferences`, ensuring access only for logged-in users.
+
+<img src="assets/homePage.png" width="200" height="auto" />
+
+## 💡 SharedPreferences Navigation
+- **Splash Screen** checks `isLoggedIn` in `SharedPreferences` to decide whether to show the Login page or Home screen.
+- After login, `isLoggedIn` is set to `true` in `SharedPreferences`.
+- On logout, `isLoggedIn` is set to `false`, redirecting users to the Login page on the next app launch.
